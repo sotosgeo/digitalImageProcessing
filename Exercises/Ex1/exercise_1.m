@@ -1,5 +1,5 @@
-%% Exercise 1
-
+%% Exercise 1 - Filtering at frequency domain
+clear,close all;
 
 moon = imread("moon.jpg");
 
@@ -172,5 +172,5 @@ subplot(1,3,3)
 imshow(uint8(abs(final_image)));
 axis on
 title("Filtered Image");
-
+sgtitle("Filtering with a Gaussian LPF");
 

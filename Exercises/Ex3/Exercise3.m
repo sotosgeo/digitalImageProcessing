@@ -1,10 +1,12 @@
 %% Exercise 3 - Noise Filtering
 %% 1 - White Gaussian Noise
+close all; clear;
 
-
-storedStruct = load("/home/sotosgeo/Desktop/digitalImageProc/dgp-2022/Exercises/Ex3/tiger.mat");
+storedStruct = load("tiger.mat");
 tiger = storedStruct.tiger;
+figure;
 imshow(tiger,[]);
+title("Original Image");
 
 
 % Get size of image
@@ -133,6 +135,7 @@ sgtitle("Removing both types of Noise - Median Filter first");
 %absolute differences between the filtered images and the original one
 f8 = figure;
 imshow([imabsdiff(tiger,MAF_then_Median) imabsdiff(tiger,Median_then_MAF)]);
+title("MAF then Median - Median then MAF - Difference from original image ");
 
 %The median filter is better to apply first, inorder to remove S&P noise,
 %because applying a moving average filter to an S&P noisy image, will add
